@@ -3,6 +3,9 @@ import classnames from 'classnames';
 
 import './styles.scss';
 
+// reused from an old project of mine
+// https://github.com/raespark/node-my-game-collection/tree/master/src/Components/StarRating
+
 function Star({ partialFill, active, size }) {
     const idTag = Math.floor(Math.random() * 100);
     return (
