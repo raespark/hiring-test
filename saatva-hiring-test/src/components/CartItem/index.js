@@ -1,10 +1,13 @@
 import { useContext } from 'react';
+
 import CartContext from '../../contexts/cartContext';
+
 import './styles.scss';
 
 function CartItem({ mattress, quantity }) {
     const { removeFromCart } = useContext(CartContext);
 
+    // adds commas and converts to a string
     const formattedPrice = mattress.price.toLocaleString('en-us', {
         maximumFractionDigits: 2,
     });

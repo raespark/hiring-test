@@ -14,6 +14,7 @@ function CartHeader() {
 
     const [cartTotal, setCartTotal] = useState(0);
 
+    // add up cart total when cart changes
     useEffect(() => {
         let newTotal = 0;
 

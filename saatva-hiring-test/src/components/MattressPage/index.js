@@ -1,32 +1,32 @@
 import { useContext, useEffect, useState } from 'react';
 
 import OptionToggle from '../OptionToggle';
+import StarRating from '../StarRating';
 import MattressContext from '../../contexts/selectedMattressContext';
 import CartContext from '../../contexts/cartContext';
 
 import './styles.scss';
-import StarRating from '../StarRating';
 
 function MattressPage() {
     const { currentMattress } = useContext(MattressContext);
     const { cart, addToCart } = useContext(CartContext);
 
+    // adds commas and converts to a string
     const formattedPrice = currentMattress.price.toLocaleString('en-us', {
         maximumFractionDigits: 2,
     });
 
     const [addedToCart, setAddedToCart] = useState(cart.has(currentMattress));
 
-    const handleClick = () => {
+    const handleAddToCart = () => {
         setAddedToCart(true);
         addToCart(currentMattress);
     };
 
+    // Check if item is in cart when cart/mattress updates
     useEffect(() => {
         setAddedToCart(cart.has(currentMattress));
     }, [cart, currentMattress]);
-
-    console.log(currentMattress);
 
     return (
         <div className="mattress-page">
@@ -50,7 +50,7 @@ function MattressPage() {
                         size={20}
                     />
                 </div>
-                <div className="add-to-cart" onClick={handleClick}>
+                <div className="add-to-cart" onClick={handleAddToCart}>
                     {addedToCart ? 'Added' : 'Add To Cart'}
                 </div>
             </div>

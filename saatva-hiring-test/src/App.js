@@ -1,12 +1,12 @@
+import { useState } from 'react';
+
 import CartHeader from './components/CartHeader';
 import MattressPage from './components/MattressPage';
-
 import MattressContext from './contexts/selectedMattressContext';
-import mattressData from './mattresses.json';
-
-import './App.scss';
-import { useState } from 'react';
 import CartContext, { cart } from './contexts/cartContext';
+
+import mattressData from './mattresses.json';
+import './App.scss';
 
 function App() {
     const mattressList = Object.values(mattressData.mattresses);

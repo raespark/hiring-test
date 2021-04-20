@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-
 import classnames from 'classnames';
+
 import MattressContext from '../../contexts/selectedMattressContext';
 
 import './styles.scss';
