@@ -1,0 +1,77 @@
+@import '../../globals.scss';
+
+.mattress-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 50px $mobile-side-padding;
+
+    @media (min-width: $md-screen-min) {
+        padding: 50px $tablet-side-padding;
+    }
+
+    @media (min-width: $lg-screen-min) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px;
+        padding: 50px $desktop-side-padding;
+    }
+
+    .mattress-image {
+        width: 100%;
+    }
+
+    .mattress-page-header {
+        margin-top: 0;
+        font-family: $header-font;
+        font-weight: 400;
+        margin-bottom: 40px;
+        font-size: 24px;
+
+        @media (min-width: $md-screen-min) {
+            font-size: 32px;
+        }
+    }
+
+    .mattress-name-and-price {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        margin-bottom: 10px;
+        font-size: 16px;
+
+        @media (min-width: $md-screen-min) {
+            font-size: 18px;
+        }
+
+        .mattress-name {
+            font-weight: 600;
+        }
+
+        .mattress-price {
+            color: $text-light;
+        }
+    }
+
+    .mattress-review-rating {
+        margin-bottom: 50px;
+        display: grid;
+        align-items: center;
+
+        .review-star-rating {
+            justify-self: start;
+        }
+    }
+
+    .add-to-cart {
+        width: calc(100% - 30px);
+        border: none;
+        background-color: $brand-color-light;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $brand-color-dark;
+        }
+    }
+}

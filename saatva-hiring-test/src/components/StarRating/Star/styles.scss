@@ -1,0 +1,19 @@
+@import '../../../globals.scss';
+
+.star {
+    .star-svg {
+        path {
+            fill: $toggle-highlight;
+        }
+
+        &.active {
+            path {
+                fill: $brand-color-light;
+            }
+        }
+    }
+
+    .fill-clip {
+        fill: $brand-color-light;
+    }
+}

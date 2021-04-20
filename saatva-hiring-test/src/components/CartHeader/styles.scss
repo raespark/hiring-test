@@ -1,0 +1,115 @@
+@import '../../globals.scss';
+
+@keyframes grow {
+    from {
+        transform: scale(0.25);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.cart-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 30px $mobile-side-padding;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    align-items: center;
+    box-shadow: 0 2px 2px rgba(gray, 0.5);
+    z-index: 5;
+
+    @media (min-width: $md-screen-min) {
+        padding: 30px $tablet-side-padding;
+    }
+
+    @media (min-width: $lg-screen-min) {
+        padding: 30px $desktop-side-padding;
+    }
+
+    .logo {
+        fill: $brand-color-dark;
+        display: grid;
+        justify-content: start;
+    }
+
+    .cart-container {
+        display: grid;
+        align-items: center;
+        position: relative;
+
+        .cart-bubble {
+            position: absolute;
+            right: -10px;
+            top: -5px;
+            color: white;
+            background-color: $brand-color-dark;
+            border-radius: 50%;
+            display: grid;
+            align-items: center;
+            height: 16px;
+            width: 16px;
+            padding: 2px;
+            animation: grow 0.1s ease-in;
+
+            .cart-number {
+                display: grid;
+                align-items: center;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+        .cart-icon {
+            stroke: $text-dark;
+            stroke-width: 1px;
+            cursor: pointer;
+        }
+
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(black, 0.5);
+            z-index: 0;
+        }
+
+        .cart-menu {
+            position: fixed;
+            background-color: white;
+            top: 95px;
+            right: 0;
+            left: 0;
+            box-shadow: 0 2px 2px rgba(gray, 0.5);
+            z-index: 5;
+            padding: 10px;
+
+            @media (min-width: $md-screen-min) {
+                top: 95px;
+                right: 50px;
+                width: 500px;
+            }
+
+            .cart-title {
+                white-space: nowrap;
+            }
+
+            .empty-cart {
+                padding: 50px;
+                text-align: center;
+            }
+
+            .cart-total {
+                text-align: right;
+
+                .cart-total-amount {
+                    color: $text-light;
+                }
+            }
+        }
+    }
+}

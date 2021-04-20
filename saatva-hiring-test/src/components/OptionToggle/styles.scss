@@ -1,0 +1,43 @@
+@import '../../globals.scss';
+
+.option-toggle-with-title {
+    margin-bottom: 30px;
+
+    .option-toggle-title {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 16px;
+
+        @media (min-width: $md-screen-min) {
+            font-size: 18px;
+        }
+    }
+
+    .option-toggle {
+        display: grid;
+        grid-auto-flow: column;
+
+        .option {
+            border: 1px solid $border-color;
+            background-color: white;
+            text-align: center;
+            display: grid;
+            align-items: center;
+            color: $toggle-highlight;
+            padding: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 12px;
+
+            @media (min-width: $md-screen-min) {
+                font-size: 18px;
+                padding: 20px;
+            }
+
+            &.selected {
+                background-color: $toggle-highlight;
+                color: white;
+            }
+        }
+    }
+}

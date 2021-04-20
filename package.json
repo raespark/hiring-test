@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "node-sass": "^5.0.0",
+    "react-feather": "^2.0.9",
+    "react-svg": "^13.0.2"
+  }
+}

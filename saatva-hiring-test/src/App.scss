@@ -1,0 +1,11 @@
+@import 'globals.scss';
+
+.App {
+    background-color: $background-color;
+    min-height: 100vh;
+    font-family: $body-font;
+
+    .mattress-page {
+        margin-top: 95px;
+    }
+}
